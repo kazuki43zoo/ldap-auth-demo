@@ -1,0 +1,44 @@
+version: 1
+
+dn: ou=people,dc=example,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: uid=admin,ou=people,dc=example,dc=com
+cn: Kazuki Shimizu
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+sn: Kazuki
+uid: admin
+userpassword: {CRYPT}7pnoyta7lRz7M
+
+dn: uid=user,ou=people,dc=example,dc=com
+cn: Taro Yamada
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+sn: Taro
+uid: user
+userpassword: {CRYPT}5yE50Zf2Dqg2o
+
+dn: ou=groups,dc=example,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: cn=admin,ou=groups,dc=example,dc=com
+cn: admin
+objectclass: groupOfUniqueNames
+objectclass: top
+uniquemember: uid=admin,ou=people,dc=example,dc=com
+
+dn: cn=user,ou=groups,dc=example,dc=com
+cn: user
+objectclass: groupOfUniqueNames
+objectclass: top
+uniquemember: uid=admin,ou=people,dc=example,dc=com
+uniquemember: uid=user,ou=people,dc=example,dc=com
